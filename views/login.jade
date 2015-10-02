@@ -1,0 +1,6 @@
+﻿form(class="form-auth", ng-submit="login()")
+  h2 Login
+  p(class="text-warning") {{error_message}}
+  input(type="username", ng-model="user.username", placeholder="Username", class="form-control")
+  input(type="password", ng-model="user.password", placeholder="Password", class="form-control")
+  input(type="submit" value="Login" class="btn btn-primary")

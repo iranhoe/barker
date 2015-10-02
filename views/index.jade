@@ -1,0 +1,27 @@
+﻿doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+    script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js')
+    script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js')
+    script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js')            
+    script(src='/javascripts/app.js')
+  body(ng-app='tiempoApp')
+    nav(class="nav-fluid navbar-default navbar-fixed-top")
+      div(class="container")
+        a(class="navbar-brand", href="#") Tiempo Twitte
+        p(class="navbar-text") Learn the MEAN stack by building this tiny app
+
+        p(class="navbar-right navbar-text", ng-hide="authenticated")
+          a(href="#/login") Login 
+          | or 
+          a(href="#/register") register
+
+        p(class="navbar-right navbar-text", ng-show="authenticated")
+          a(href="#", ng-click="signout()") logout
+        p(class="navbar-right navbar-text", ng-show="authenticated") Signed in as {{current_user}}
+
+    div(class="col-md-offset-2 col-md-8")
+      div(ng-view)
